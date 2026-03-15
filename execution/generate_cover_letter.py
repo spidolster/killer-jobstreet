@@ -1,6 +1,6 @@
 import os
 import logging
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI  # Using OpenAI SDK to interact with DeepSeek API
 
 async def generate_cover_letter(job_title: str, company_name: str, company_profile: str, job_description: str, resume_text: str) -> str:
     """

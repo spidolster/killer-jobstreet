@@ -1,7 +1,7 @@
 import os
 import logging
 from duckduckgo_search import DDGS
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI  # Using OpenAI SDK to interact with DeepSeek API
 
 async def research_company(company_name: str) -> str:
     """

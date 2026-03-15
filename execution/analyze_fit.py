@@ -1,7 +1,7 @@
 import os
 import logging
 import json
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI  # Using OpenAI SDK to interact with DeepSeek API
 
 async def analyze_fit(job_description: str, resume_text: str) -> dict:
     """

@@ -1,6 +1,6 @@
 import os
 import logging
-from openai import AsyncOpenAI
+from openai import AsyncOpenAI  # Using OpenAI SDK to interact with DeepSeek API
 
 
 async def tailor_resume(resume_text: str, job_description: str, fit_analysis: str) -> str:

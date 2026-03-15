@@ -57,9 +57,11 @@ Following the 3-Layer Agentic Architecture defined in `AGENTS.md`:
    ```
 
 5. **Configure Environment Variables:**
-   Create a `.env` file in the root directory and add any required API keys for the company research tool (e.g., `OPENAI_API_KEY`).
+   Create a `.env` file in the root directory and add any required API keys for the company research tool (e.g., `DEEPSEEK_API_KEY`).
    ```env
-   OPENAI_API_KEY=your_api_key_here
+   DEEPSEEK_API_KEY=your_api_key_here
+   DEEPSEEK_MODEL=deepseek-chat
+   DEEPSEEK_BASE_URL=https://api.deepseek.com
    ```
 
 ## Usage
