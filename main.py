@@ -132,15 +132,23 @@ async def run_scraper(url: str, interval_minutes: int | None, proxy: str | None)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="JobStreet Scraper CLI with Stealth")
-    parser.add_argument("url", help="JobStreet URL to scrape")
     parser.add_argument("--interval", type=int, help="Interval in minutes to run the scraper repeatedly (optional)")
     parser.add_argument("--proxy", type=str, help="Proxy server in the format http://username:password@ip:port (optional)")
-    
+
     args = parser.parse_args()
-    
+
+    print("=" * 50)
+    print("  JobStreet Job Scraper")
+    print("=" * 50)
+    url = input("Masukkan URL JobStreet: ").strip()
+
+    if not url:
+        print("Error: URL tidak boleh kosong.")
+        exit(1)
+
     init_db()
-    
+
     try:
-        asyncio.run(run_scraper(args.url, args.interval, args.proxy))
+        asyncio.run(run_scraper(url, args.interval, args.proxy))
     except KeyboardInterrupt:
         logging.info("Scraper stopped by user.")

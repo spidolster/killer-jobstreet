@@ -66,20 +66,30 @@ Following the 3-Layer Agentic Architecture defined in `AGENTS.md`:
 
 ## Usage
 
-Run the scraper using `main.py` and provide the target JobStreet job URL.
+Run the scraper using `main.py`. The application will prompt you to enter the target JobStreet job URL interactively. This ensures that special characters (like `&`) in the URL are handled correctly regardless of your shell (PowerShell, Bash, etc.).
 
 ```bash
-python main.py "https://www.jobstreet.co.id/job/..."
+python main.py
+```
+
+After running the command, you will see a prompt:
+```text
+==================================================
+  JobStreet Job Scraper
+==================================================
+Masukkan URL JobStreet:
 ```
 
 ### Optional Arguments
 
-- `--interval <minutes>`: Set an interval to run the extraction continuously (e.g., `--interval 60` runs every hour).
+Optional arguments can still be provided when starting the script:
+- `--interval <minutes>`: Set an interval to run the extraction continuously (e.g., `--interval 60`).
 - `--proxy <proxy_url>`: Use a proxy server (format: `http://username:password@ip:port`).
 
 **Example with arguments:**
 ```bash
-python main.py "https://www.jobstreet.co.id/job/..." --interval 30 --proxy "http://user:pass@127.0.0.1:8080"
+python main.py --interval 30 --proxy "http://user:pass@127.0.0.1:8080"
+```
 ```
 
 ## Output
