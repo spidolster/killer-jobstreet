@@ -9,6 +9,7 @@ venv/
 .venv/
 
 # Project specifics
-output/
+.tmp/
+jobs.db
 page.html
 test_ddg.py

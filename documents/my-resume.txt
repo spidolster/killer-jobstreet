@@ -1,0 +1,118 @@
+"Ari Wahyudi
+Data Analyst / Business Analyst
++62 811 5429 090
+spidolster@gmail.com
+Bontang 75311
+&nbsp;
+Willing to relocate anywhere
+Summary
+Accomplished Senior Data Analyst with 12+ years of experience driving operational excellence through data mining, predictive modeling, and business intelligence. Recognized expertise in transforming complex datasets into actionable insights for strategic decision-making. Proficient in Excel, SQL, Python, Tableau, and BI tools for data visualization and automation. Adept communicator skilled in presenting data-driven recommendations to cross-functional teams and stakeholders. Proven track record of optimizing mining operations, reducing costs, and increasing operational efficiency through data-driven solutions.
+Personal information
+Date Of Birth: 5/1/1984
+Highest Career Level: Experienced
+Total years of experience: 13
+Work experience
+Senior Forecast & Profitability Analyst
+Viahart LLC - Austin, TX
+August 2025 to Present
+Forecasted sales and inventory demand to support purchasing decisions and optimize multi-location inventory levels using seasonal and trend analysis.
+Monitored actual sales vs. forecasts, identified variances and root causes of inventory discrepancies, and flagged issues requiring operational attention.
+Analyzed product pricing and profitability across U.S., retail, and international markets, supporting margin optimization and decision-making.
+Built, audited, and simplified spreadsheet-based models and dashboards, validating logic and calculations while documenting systems and SOPs for cross-team use.
+Senior Data Analyst
+Real Vantage Pte. Ltd. - Singapore
+May 2024 to August 2025
+Spearheaded the development and management of a comprehensive company dashboard using Metabase and SQL, enhancing real-time data accessibility for executive decision-making in a fintech-driven real estate investment fund.
+Led a cross-functional team in the implementation of advanced data analytics solutions, resulting in a 15% increase in operational efficiency within the first quarter.
+Developed predictive analytics models to forecast investor behavior and market trends, driving an increase in investor retention rates.
+Automated complex data workflows and reporting processes, reducing manual effort by 50% and enabling more timely and accurate business insights.
+Collaborated closely with CEO & CTO to provide actionable insights and strategic recommendations, directly influencing key business initiatives in the fintech and real estate investment sectors.
+Senior Digital Marketing Analyst
+Aykobon Digital - Samarinda
+July 2021 to April 2024
+Analyzed and optimized Google AdWords campaigns resulting in a 30% increase in click-through rates and 20% decrease in cost per click
+Developed and launched a successful social media advertising strategy that generated a 50% increase in website traffic and 20% increase in sales
+Implemented A/B testing for email marketing campaigns, leading to a 25% improvement in open rates and a 15% increase in conversion rates
+Utilized data-driven insights to revamp content strategy, resulting in a 40% increase in organic search traffic and 50% increase in engagement on company blog
+Conducted thorough market research and competitor analysis, identifying new target audiences and opportunities for growth, contributing to a 10% increase in
+Mine Optimization Data Supervisor
+PT Tambang Raya Usaha Tama - Bontang
+January 2018 to June 2021
+Optimized mining operations by analyzing large datasets on production, cost, equipment, safety, and environmental metrics to identify trends and areas for improvement.
+Designed and automated over 15 reports/dashboards using Tableau/Data Studio, enabling data-driven decision-making that optimized production targets by 3% and reduced budget overruns by $250K annually.
+Conducted root cause analysis on production downtime and developed predictive models, reducing loss time by 12% and saving an estimated $1M in operational costs over the year.
+Collaborated with cross-functional teams to assess data quality, establish KPIs, and implement data governance processes, improving data accuracy by 27% within 6 months.
+Leveraged expertise in data storytelling to convey complex insights, contributing to operational excellence initiatives with quantified impact.
+Mentored and upskilled team members on data analysis, visualization and reporting to build organizational capabilities.
+Mine Optimization Data Foreman
+PT Tambang Raya Usaha Tama - Bontang
+January 2012 to December 2017
+Collected and analyzed operational data from various departments including mine planning and mechanics to create comprehensive reports using Excel and VBA.
+Coordinated cross-functionally to gather insights, identify trends, and communicate key metrics through email reporting.
+Optimized data visualization and presentation, enabling stakeholders to identify and address production bottlenecks, resulting in an increase in operational efficiency.
+Enabled data-driven decision-making by providing clear and actionable reports to management, contributing to a 10% reduction in some operational costs within the first year.
+Operation Data Collector
+PT Kitadin Tandung Mayang - Bontang
+April 2009 to January 2012
+Collected and synthesized operational data from log sheets, employee records, and mechanic reports to create comprehensive daily reports for management.
+Streamlined reporting processes by developing an Excel template with automated formulas, improving accuracy by 35% and saving over 20 hours per week in manual data entry.
+Prepared critical daily reports utilized by managers for operational decision-making and performance tracking, ensuring 100% timeliness and precision.
+Functioned as an Excel expert, creating customized templates and providing training to coworkers to enhance productivity across the data collection team.
+Logistics Foreman
+PT Mitra Nasional Pratama - Banjarbaru
+July 2008 to January 2009
+Handled ordering and procurement of operational supplies, diesel fuel, and general office items.
+Coordinated with vendors and suppliers to ensure timely delivery of resources.
+Assisted in maintaining production records and input data for operator payroll calculations.
+Provided administrative and logistical support to office staff across various areas as needed.
+Gained experience in a hands-on environment, contributing to diverse operational tasks in a small team setting.
+Education
+Bachelor in Forestry
+Mulawarman University - Samarinda
+June 2001 to March 2008
+Skills
+Tableau
+PDCA Facilitator
+VBA Macro
+Power BI
+Python
+Metabase
+Internal Auditing
+Budget & Cost Control
+SQL
+Microsoft Excel
+Looker Studio
+Languages
+English - Fluent
+Awards
+ITM Innovation Award
+October 2011
+3rd ITM Innovation Convention, Balikpapan
+Certifications & licenses
+Google Data Analyst Professional Certificate
+March 2024, Present
+Those who earn the Google Data Analytics Professional Certificate have completed eight courses, developed by Google, that include hands-on, practice-based assessments and are designed to prepare them for introductory-level roles in Data Analytics. They are competent in tools and platforms including spreadsheets, SQL, Tableau, and R. They know how to prepare, process, analyze, and share data for thoughtful action.
+Python for Data Professional
+November 2022, Present
+Comprehensive course covering fundamental Python programming concepts and their practical application in data-driven professions. Mastered data manipulation, analysis, and visualization techniques using Python libraries like NumPy, Pandas, and Matplotlib. Gained expertise in extracting insights from complex datasets, automating repetitive tasks, and developing data-centric applications.
+R Fundamentals for Data Sciences
+October 2022, Present
+This course covers the fundamental concepts and techniques of the R programming language, equipping learners with the skills to effectively analyze and visualize data for data science applications. Participants will learn data manipulation, statistical modeling, and the creation of dynamic reports, laying a strong foundation for further exploration in the field of data science.
+Database - SQL Track
+October 2022, Present
+Completed comprehensive training in SQL for database management. Proficient in writing queries using SELECT, INSERT, UPDATE, and DELETE statements. Skilled in joining tables, filtering data, and grouping results. Creating and modifying database objects like tables, views, and stored procedures. Query optimization techniques for efficient data retrieval. Database design principles, normalization, and data integrity. Demonstrated ability to develop SQL scripts for data analysis & reporting.
+ISO 45001: 2018 Occupational Health and Safety Management Systems Internal Auditor
+October 2018, Present
+Acquired the knowledge and skills to conduct internal audits of an organization occupational health and safety management system (OHS MS) in accordance with ISO 45001:2018 standard requirements. Trained in audit principles, procedures, and techniques to evaluate effective implementation and maintenance of an ISO 45001 compliant OH&S MS.
+ISO 9001:2015 Internal Auditor
+October 2018, Present
+Acquired comprehensive knowledge and skills for conducting internal audits of ISO 9001:2015 Quality Management Systems. Interpreting ISO 9001 requirements and applying auditing principles and techniques. Planning, conducting, reporting audits, and documenting objective evidence. Identifying nonconformities, analyzing root causes, and recommending corrective actions. Auditing best practices for evaluating process effectiveness and promoting continual improvement.
+ISO 140001:2015 Internal Auditor
+October 2018, Present
+Completed comprehensive training for conducting internal audits of ISO 14001:2015 Environmental Management Systems. Interpreting ISO 14001 requirements and applying auditing principles and techniques. Skilled in planning, executing, and reporting environmental audits objectively. Identifying environmental aspects, impacts, and nonconformities. Auditing best practices for evaluating environmental performance and compliance.
+Front Man Leadership Program
+November 2012, Present
+Completed comprehensive training in frontline leadership skills. Abilities in effective communication, coaching, delegation, and motivation. Learned techniques for conflict resolution, decision-making, and performance management. Gained insights into leading teams, promoting accountability, and driving results. Acquired knowledge of leadership best practices, emotional intelligence, and change management. Demonstrated competencies in inspiring and developing others for organizational success.
+VBA For Excel
+October 2010, Present
+Acquired skills in automating Excel through Visual Basic for Applications (VBA). Mastered VBA programming fundamentals and Excel Object Model. Proficient in creating macros, user-defined functions, and interactive forms. Demonstrated ability to enhance productivity and solve complex problems using VBA automation."
