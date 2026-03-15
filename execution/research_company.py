@@ -1,9 +1,14 @@
 import os
 import logging
+import warnings
+
+USING_LEGACY_DDG_PACKAGE = False
+
 try:
-    from ddgs import DDGS  # New package name
+    from ddgs import DDGS  # Preferred package name
 except ImportError:  # Backward compatibility with old package name
     from duckduckgo_search import DDGS
+    USING_LEGACY_DDG_PACKAGE = True
 from openai import AsyncOpenAI  # Using OpenAI SDK to interact with DeepSeek API
 
 async def research_company(company_name: str) -> str:
@@ -19,6 +24,15 @@ async def research_company(company_name: str) -> str:
     search_results_text = ""
     try:
         query = f"{company_name} company what they do products culture"
+
+        if USING_LEGACY_DDG_PACKAGE:
+            warnings.filterwarnings(
+                "ignore",
+                message=r"This package \(`duckduckgo_search`\) has been renamed to `ddgs`!.*",
+                category=RuntimeWarning,
+            )
+            logging.info("Using legacy duckduckgo_search package. Install ddgs to remove deprecation warnings.")
+
         with DDGS() as ddgs:
             results = [r for r in ddgs.text(query, max_results=5)]
 
