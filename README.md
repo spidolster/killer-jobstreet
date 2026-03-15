@@ -90,7 +90,6 @@ Optional arguments can still be provided when starting the script:
 ```bash
 python main.py --interval 30 --proxy "http://user:pass@127.0.0.1:8080"
 ```
-```
 
 ## Output
 
