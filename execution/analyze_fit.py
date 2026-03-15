@@ -25,8 +25,6 @@ async def analyze_fit(job_description: str, resume_text: str) -> dict:
             logging.error("DEEPSEEK_API_KEY is not set in .env")
             return {"match_score": 0, "fit_analysis": '{"error": "DeepSeek API key missing"}'}
 
-        client = AsyncOpenAI(api_key=api_key, base_url=base_url)
-
         prompt = f"""
 You are an expert technical recruiter and career coach.
 Analyze the following Job Description against the provided Resume.
@@ -53,15 +51,16 @@ Example JSON:
 }}
 """
 
-        response = await client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": "You are a JSON-producing career analysis engine. Output only valid JSON."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.2,
-            response_format={ "type": "json_object" }
-        )
+        async with AsyncOpenAI(api_key=api_key, base_url=base_url) as client:
+            response = await client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are a JSON-producing career analysis engine. Output only valid JSON."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.2,
+                response_format={ "type": "json_object" }
+            )
         
         result_content = response.choices[0].message.content.strip()
         

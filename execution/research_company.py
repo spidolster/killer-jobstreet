@@ -1,6 +1,9 @@
 import os
 import logging
-from duckduckgo_search import DDGS
+try:
+    from ddgs import DDGS  # New package name
+except ImportError:  # Backward compatibility with old package name
+    from duckduckgo_search import DDGS
 from openai import AsyncOpenAI  # Using OpenAI SDK to interact with DeepSeek API
 
 async def research_company(company_name: str) -> str:
@@ -18,11 +21,12 @@ async def research_company(company_name: str) -> str:
         query = f"{company_name} company what they do products culture"
         with DDGS() as ddgs:
             results = [r for r in ddgs.text(query, max_results=5)]
-            if results:
-                for idx, r in enumerate(results):
-                    search_results_text += f"Result {idx+1}:\nTitle: {r.get('title', '')}\nSnippet: {r.get('body', '')}\n\n"
-            else:
-                logging.warning(f"DuckDuckGo returned no results for {company_name}")
+
+        if results:
+            for idx, r in enumerate(results):
+                search_results_text += f"Result {idx+1}:\nTitle: {r.get('title', '')}\nSnippet: {r.get('body', '')}\n\n"
+        else:
+            logging.warning(f"DuckDuckGo returned no results for {company_name}")
     except Exception as e:
         logging.error(f"Error during DuckDuckGo search: {e}")
 
@@ -39,8 +43,6 @@ async def research_company(company_name: str) -> str:
             logging.error("DEEPSEEK_API_KEY is not set in .env")
             return "Error: DeepSeek API key is missing."
 
-        client = AsyncOpenAI(api_key=api_key, base_url=base_url)
-
         prompt = f"""
 Research results for the company '{company_name}':
 
@@ -56,15 +58,16 @@ Focus on:
 Keep it very brief, objective, and strictly use bullet points.
 """
 
-        response = await client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": "You are a concise business research assistant."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.3,
-            max_tokens=600
-        )
+        async with AsyncOpenAI(api_key=api_key, base_url=base_url) as client:
+            response = await client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are a concise business research assistant."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3,
+                max_tokens=600
+            )
         
         summary = response.choices[0].message.content.strip()
         return summary

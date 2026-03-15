@@ -22,8 +22,6 @@ async def generate_cover_letter(job_title: str, company_name: str, company_profi
             logging.error("DEEPSEEK_API_KEY is not set in .env")
             return "Error: DeepSeek API key missing in environment variables."
 
-        client = AsyncOpenAI(api_key=api_key, base_url=base_url)
-
         prompt = f"""
 You are a very competent career coach, CV and resume consultant. You help people get their dream job.
 You will help me with my job application.
@@ -48,15 +46,16 @@ Create a cover letter for this job, suitable for the applied job level, in langu
 Do not wrap it in markdown block quotes or prepend unnecessary text; output just the cover letter content.
 """
 
-        response = await client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": "You are a professional cover letter writer. Output only the final cover letter text without additional commentary."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.7,  # Slightly higher than fit_analysis for natural text wording
-            response_format={ "type": "text" }
-        )
+        async with AsyncOpenAI(api_key=api_key, base_url=base_url) as client:
+            response = await client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are a professional cover letter writer. Output only the final cover letter text without additional commentary."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.7,  # Slightly higher than fit_analysis for natural text wording
+                response_format={ "type": "text" }
+            )
         
         result_content = response.choices[0].message.content.strip()
         return result_content

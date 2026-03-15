@@ -26,8 +26,6 @@ async def tailor_resume(resume_text: str, job_description: str, fit_analysis: st
             logging.error("DEEPSEEK_API_KEY is not set in .env")
             return resume_text
 
-        client = AsyncOpenAI(api_key=api_key, base_url=base_url)
-
         prompt = f"""
 You are a very competent career coach, CV and resume consultant. You help people get their dream job.
 
@@ -53,15 +51,16 @@ Rewrite the resume to be optimally tailored for this specific job. Follow these 
 8. Output ONLY the final resume text. No commentary, no explanations, no markdown formatting.
 """
 
-        response = await client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": "You are an expert resume writer. Output only the final tailored resume text without any commentary or formatting markers."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.5,
-            response_format={"type": "text"}
-        )
+        async with AsyncOpenAI(api_key=api_key, base_url=base_url) as client:
+            response = await client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are an expert resume writer. Output only the final tailored resume text without any commentary or formatting markers."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.5,
+                response_format={"type": "text"}
+            )
 
         result_content = response.choices[0].message.content.strip()
         logging.info("Resume tailoring completed successfully.")
