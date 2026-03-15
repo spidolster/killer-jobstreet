@@ -4,6 +4,20 @@ import os
 
 DB_PATH = 'jobs.db'
 
+
+def normalize_score(raw_score, fallback=0):
+    """Normalize match score into a safe integer for reporting logic."""
+    try:
+        if raw_score is None:
+            raise ValueError("score is None")
+        return int(float(raw_score))
+    except (TypeError, ValueError):
+        print(
+            f"⚠️  Invalid match score value ({raw_score!r}). "
+            f"Using fallback score {fallback}."
+        )
+        return fallback
+
 def export_latest_analysis():
     if not os.path.exists(DB_PATH):
         print(f"Database not found at {DB_PATH}. Run a scrape first.")
@@ -37,7 +51,8 @@ def export_latest_analysis():
         print(f"URL       : {row['job_url']}")
         print("-" * 60)
         
-        score = row['match_score']
+        raw_score = row['match_score']
+        score = normalize_score(raw_score)
         print(f"Match Score: {score}/100")
         
         # Determine verbal match category
@@ -55,23 +70,22 @@ def export_latest_analysis():
         analysis_raw = row['fit_analysis']
         if not analysis_raw:
             print("No detailed fit analysis available.")
-            return
-            
-        try:
-            analysis = json.loads(analysis_raw)
-            
-            print("\n✅ MATCHED SKILLS:")
-            print(analysis.get('matched_skills', 'N/A'))
-            
-            print("\n⚠️ GAP ANALYSIS (What's Missing):")
-            print(analysis.get('gap_analysis', 'N/A'))
-            
-            print("\n💬 QUICK PITCH:")
-            print(analysis.get('quick_pitch', 'N/A'))
-            
-        except json.JSONDecodeError:
-            print("Could not parse detailed analysis data.")
-            print(f"Raw data: {analysis_raw}")
+        else:
+            try:
+                analysis = json.loads(analysis_raw)
+
+                print("\n✅ MATCHED SKILLS:")
+                print(analysis.get('matched_skills', 'N/A'))
+
+                print("\n⚠️ GAP ANALYSIS (What's Missing):")
+                print(analysis.get('gap_analysis', 'N/A'))
+
+                print("\n💬 QUICK PITCH:")
+                print(analysis.get('quick_pitch', 'N/A'))
+
+            except json.JSONDecodeError:
+                print("Could not parse detailed analysis data.")
+                print(f"Raw data: {analysis_raw}")
             
         print("="*60)
         
