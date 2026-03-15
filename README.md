@@ -33,8 +33,8 @@ Following the 3-Layer Agentic Architecture defined in `AGENTS.md`:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/spidolster/job-assistant.git
-   cd jobstreet-helper
+   git clone https://github.com/spidolster/killer-jobstreet.git
+   cd killer-jobstreet
    ```
 
 2. **Create and activate a virtual environment (recommended):**
