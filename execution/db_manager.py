@@ -27,12 +27,20 @@ def init_db():
                     extracted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
             ''')
-            # Migrations: add columns if missing (existing databases)
-            for col in ['cover_letter', 'tailored_resume']:
+            # Backward-compatibility migration for older databases missing new columns.
+            migration_columns = {
+                'cover_letter': 'TEXT',
+                'tailored_resume': 'TEXT',
+                'match_score': 'INTEGER',
+                'fit_analysis': 'TEXT',
+            }
+            for col, col_type in migration_columns.items():
                 try:
-                    cursor.execute(f'ALTER TABLE job_applications ADD COLUMN {col} TEXT')
-                except Exception:
-                    pass  # Column already exists
+                    cursor.execute(f'ALTER TABLE job_applications ADD COLUMN {col} {col_type}')
+                except sqlite3.OperationalError as e:
+                    if 'duplicate column name' in str(e).lower():
+                        continue
+                    raise
             conn.commit()
             logging.info(f"Database initialized at {DB_PATH}")
     except Exception as e:
