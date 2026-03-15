@@ -1,7 +1,6 @@
 import sqlite3
-import os
 import logging
-import time
+from contextlib import closing
 
 DB_PATH = 'jobs.db'
 
@@ -10,7 +9,7 @@ def get_connection():
 
 def init_db():
     try:
-        with get_connection() as conn:
+        with closing(get_connection()) as conn:
             cursor = conn.cursor()
             cursor.execute('''
                 CREATE TABLE IF NOT EXISTS job_applications (
@@ -48,7 +47,7 @@ def init_db():
 
 def insert_job(job_data: dict) -> bool:
     try:
-        with get_connection() as conn:
+        with closing(get_connection()) as conn:
             cursor = conn.cursor()
             cursor.execute('''
                 INSERT INTO job_applications (
