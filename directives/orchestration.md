@@ -15,7 +15,7 @@ Coordinate the end-to-end execution of the job application assistant pipeline, f
 5. **Draft**: Generate the cover letter (`directives/generate_cover_letter.md`).
 6. **Persist**: 
     - Save all data to the SQLite `jobs.db`.
-    - Create an `output/` folder and save the tailored resume (`{Title}_{Company}_Resume.txt`) and cover letter (`{Title}_{Company}_CoverLetter.md`).
+    - Create an `output/` folder and save the tailored resume as Markdown (`{Title}_{Company}_Resume.md`), legacy text (`{Title}_{Company}_Resume.txt`), and styled DOCX (`{Title}_{Company}_Resume.docx`), plus the cover letter (`{Title}_{Company}_CoverLetter.md`).
 
 **Error Handling:**
 - The orchestrator should catch exceptions in any single step (e.g., AI failure) and allow the pipeline to continue or fail gracefully without crashing.
