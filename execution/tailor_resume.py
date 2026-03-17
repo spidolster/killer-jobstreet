@@ -9,7 +9,7 @@ async def tailor_resume(resume_text: str, job_description: str, fit_analysis: st
     and the gap analysis from the fit analysis step.
     
     The original resume is used as the factual basis — no experience is fabricated.
-    Returns the tailored resume as a plain text string.
+    Returns the tailored resume as a markdown-formatted string.
     """
     if not resume_text or not job_description:
         logging.warning("Missing resume or job description for tailoring.")
@@ -48,14 +48,14 @@ Rewrite the resume to be optimally tailored for this specific job. Follow these 
 5. Add a tailored Professional Summary / Objective at the top, customized for this position.
 6. Keep the resume professional, concise, and well-structured.
 7. Write the resume in the same language as the job description.
-8. Output ONLY the final resume text. No commentary, no explanations, no markdown formatting.
+8. Output ONLY the final resume in clean Markdown format (headings, bullet points). No commentary or explanations outside the resume.
 """
 
         async with AsyncOpenAI(api_key=api_key, base_url=base_url) as client:
             response = await client.chat.completions.create(
                 model=model,
                 messages=[
-                    {"role": "system", "content": "You are an expert resume writer. Output only the final tailored resume text without any commentary or formatting markers."},
+                    {"role": "system", "content": "You are an expert resume writer. Output only a polished markdown resume without commentary."},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.5,

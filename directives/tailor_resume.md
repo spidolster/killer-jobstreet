@@ -13,7 +13,7 @@ Rewrite the candidate's base resume to better align with a specific job descript
 - `openai` (DeepSeek API).
 
 **Outputs:**
-- A plain text string containing the rewritten, job-optimized resume.
+- A Markdown-formatted string containing the rewritten, job-optimized resume.
 
 **Edge Cases:**
 - *Significant Gaps*: If the candidate is clearly unqualified, the AI should still attempt to highlight transferable skills without lying.

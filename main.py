@@ -10,6 +10,7 @@ from execution.research_company import research_company
 from execution.analyze_fit import analyze_fit
 from execution.tailor_resume import tailor_resume
 from execution.generate_cover_letter import generate_cover_letter
+from execution.markdown_to_docx import save_markdown_as_styled_docx
 from execution.db_manager import init_db, insert_job
 from dotenv import load_dotenv
 
@@ -33,11 +34,21 @@ def _save_output_files(job_data: dict):
 
     tailored = job_data.get('tailored_resume', '')
     if tailored:
-        filename = f"{title}_{company}_Resume.txt"
-        path = os.path.join(output_dir, filename)
-        with open(path, 'w', encoding='utf-8') as f:
+        markdown_filename = f"{title}_{company}_Resume.md"
+        markdown_path = os.path.join(output_dir, markdown_filename)
+        with open(markdown_path, 'w', encoding='utf-8') as f:
             f.write(tailored)
-        logging.info(f"Tailored resume saved to {path}")
+        logging.info(f"Tailored resume markdown saved to {markdown_path}")
+
+        legacy_filename = f"{title}_{company}_Resume.txt"
+        legacy_path = os.path.join(output_dir, legacy_filename)
+        with open(legacy_path, 'w', encoding='utf-8') as f:
+            f.write(tailored)
+        logging.info(f"Tailored resume text saved to {legacy_path}")
+
+        docx_filename = f"{title}_{company}_Resume.docx"
+        docx_path = os.path.join(output_dir, docx_filename)
+        save_markdown_as_styled_docx(tailored, docx_path)
 
     cover = job_data.get('cover_letter', '')
     if cover:
